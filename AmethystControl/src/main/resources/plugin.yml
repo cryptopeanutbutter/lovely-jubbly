@@ -10,3 +10,21 @@ commands:
     usage: /spawncrystals
     permission: amethystcontrol.spawn
     permission-message: You do not have permission to use this command.
+  supply:
+    description: Shows minted crystal supply.
+    usage: /supply
+    permission: amethystcontrol.supply
+    permission-message: You do not have permission to use this command.
+  redeem:
+    description: Redeem the crystal in your hand.
+    usage: /redeem
+    permission: amethystcontrol.redeem
+    permission-message: You do not have permission to use this command.
+
+permissions:
+  amethystcontrol.supply:
+    description: Allows viewing the crystal supply ledger.
+    default: true
+  amethystcontrol.redeem:
+    description: Allows redeeming and burning minted crystals.
+    default: op

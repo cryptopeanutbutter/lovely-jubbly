@@ -7,8 +7,8 @@
 
 package dev.lixqa.amethystControl.listeners;
 
+import dev.lixqa.amethystControl.AmethystControl;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -18,11 +18,9 @@ public class FortuneListener implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent event) {
         if (event.getBlock().getType() == Material.AMETHYST_CLUSTER) {
-            ItemStack tool = event.getPlayer().getInventory().getItemInMainHand();
-            if (tool.containsEnchantment(Enchantment.LOOT_BONUS_BLOCKS)) {
-                event.setDropItems(false);
-                event.getBlock().getWorld().dropItemNaturally(event.getBlock().getLocation(), new ItemStack(Material.AMETHYST_SHARD, 1));
-            }
+            event.setDropItems(false);
+            ItemStack minted = AmethystControl.getInstance().mintCrystal();
+            event.getBlock().getWorld().dropItemNaturally(event.getBlock().getLocation(), minted);
         }
     }
 }
