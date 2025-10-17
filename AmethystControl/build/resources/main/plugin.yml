@@ -1,0 +1,12 @@
+name: AmethystControl
+version: '1.0-SNAPSHOT'
+main: dev.lixqa.amethystControl.AmethystControl
+api-version: '1.20'
+author: Lixqa Development (https://lix.qa / https://discord.gg/ldev)
+
+commands:
+  spawncrystals:
+    description: Spawns amethyst crystals manually.
+    usage: /spawncrystals
+    permission: amethystcontrol.spawn
+    permission-message: You do not have permission to use this command.
